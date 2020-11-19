@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title"> Assign Freelancer to Project</h4>
+
+            </div>
+            <div class="card-body">
+                <form #AssignForm="ngForm">
+
+                    <div class="row">
+                        <div class="col"> Project  : </div>
+                        <div class="col">
+                            <select name="type" #project="ngModel" [class.is-invalid]="project.invalid && project.touched" class="form-control"  required [(ngModel)]="projectId">
+                                <option></option>
+                                <option *ngFor="let project of projects" [value]="project.id">{{project.name}}</option>
+
+                            </select></div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col"> Freelancer  : </div>
+                        <div class="col">
+                            <select name="type" #freelancer="ngModel" [class.is-invalid]="freelancer.invalid && freelancer.touched" class="form-control"  required [(ngModel)]="freelancerId">
+                                <option></option>
+                                <option *ngFor="let freelancer of freelancers" [value]="freelancer.id">{{freelancer.name}}</option>
+
+                            </select></div>
+
+                    </div>
+
+                    <button (click)="Assign()" type="submit" [disabled]="AssignForm.form.invalid" class="btn btn-primary btn-round">Assign</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

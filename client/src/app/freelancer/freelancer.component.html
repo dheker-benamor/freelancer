@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title"> All Freelancers</h4>
+                <button [routerLink]="['/freelancer/create']" class="btn btn-primary btn-round">Create New</button>
+
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            email
+                        </th>
+
+                        <th class="align-middle ">
+                            Actions
+                        </th>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let freelancer of freelancers" >
+                            <td>
+                                {{freelancer.name}}
+                            </td>
+                            <td>
+                                {{freelancer.email}}
+                            </td>
+
+                            <td class="align-middle " >
+
+                                <button [routerLink]="['/freelancer/details', freelancer.id]" class="btn btn-primary btn-round">Details</button>
+
+
+
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

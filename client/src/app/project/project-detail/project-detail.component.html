@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">{{project.name}}</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">start date : </div>
+                    <div class="col">{{project.startDate}}</div>
+                </div>
+                <div class="row">
+                    <div class="col">end date : </div>
+                    <div class="col">{{project.endDate}}</div>
+                </div>
+                <div class="row">
+                    <div class="col">Duration : </div>
+                    <div class="col">{{project.duration}}</div>
+                </div>
+                <div class="row">
+                    <div class="col">Type  : </div>
+                    <div class="col">{{project.type}}</div>
+                </div>
+                <div class="row">
+                    <div class="col">Freelancers : </div>
+                    <div class="col">
+                        <ul >
+                            <li *ngFor="let freelancer of project.freelancers">{{freelancer.name}} </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title"> Create New Project</h4>
+
+            </div>
+            <div class="card-body">
+                <form #projectForm="ngForm">
+                    <div class="row">
+                        <div class="col">Name : </div>
+                        <div class="col"> <input name="name" #name="ngModel" [class.is-invalid]="name.invalid && name.touched" class="form-control" type="text" required [(ngModel)]="project.name"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col">start date : </div>
+                        <div class="col">
+                            <input name="startDate" #startDate="ngModel" [class.is-invalid]="startDate.invalid && startDate.touched" class="form-control" type="date" required [(ngModel)]="project.startDate">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">end date : </div>
+                        <div class="col">
+                            <input name="endDate" class="form-control" #endDate="ngModel" [class.is-invalid]="endDate.invalid && endDate.touched" type="date" required [(ngModel)]="project.endDate">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Duration : </div>
+                        <div class="col">
+                            <input name="duration" class="form-control " #duration="ngModel" [class.is-invalid]="duration.invalid && duration.touched"type="text" required [(ngModel)]="project.duration">
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Type  : </div>
+                        <div class="col">
+                            <select name="type" #type="ngModel" [class.is-invalid]="type.invalid && type.touched" class="form-control"  required [(ngModel)]="project.type">
+                                <option></option>
+                                <option value="web">web</option>
+                                <option value="mobile">mobile</option>
+                                <option value="web+mobile">web+mobile</option>
+
+                            </select></div>
+
+                    </div>
+                    <button (click)="updateProject()" type="submit" [disabled]="projectForm.form.invalid" class="btn btn-primary btn-round">Create</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

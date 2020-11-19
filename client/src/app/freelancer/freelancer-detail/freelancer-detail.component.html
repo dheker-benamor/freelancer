@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">{{freelancer.name}}</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">Email : </div>
+                    <div class="col">{{freelancer.email}}</div>
+                </div>
+                <div class="row">
+                    <div class="col">phone number : </div>
+                    <div class="col">{{freelancer.phone}}</div>
+                </div>
+                <div class="row">
+                    <div class="col">address : </div>
+                    <div class="col">{{freelancer.address}}</div>
+                </div>
+                <div class="row">
+                    <div class="col">Website  : </div>
+                    <div class="col">{{freelancer.website}}</div>
+                </div>
+                <div class="row">
+                    <div class="col">Projects : </div>
+                    <div class="col">
+                        <ul >
+                            <li *ngFor="let project of freelancer.projects">{{project.name}} </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title"> Create New Project</h4>
+
+            </div>
+            <div class="card-body">
+                <form #freelancerForm="ngForm">
+                    <div class="row">
+                        <div class="col">Name : </div>
+                        <div class="col"> <input name="name" #name="ngModel" [class.is-invalid]="name.invalid && name.touched" class="form-control" type="text" required [(ngModel)]="freelancer.name"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col">email : </div>
+                        <div class="col">
+                            <input name="email" #email="ngModel" [class.is-invalid]="email.invalid && email.touched"  class="form-control" type="email" required [(ngModel)]="freelancer.email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">phone number : </div>
+                        <div class="col">
+                            <input name="phone" #phone="ngModel" [class.is-invalid]="phone.invalid && phone.touched" pattern="^\d{8}$" class="form-control" type="tel" required [(ngModel)]="freelancer.phone">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">address : </div>
+                        <div class="col">
+                            <input name="address" class="form-control" type="text"  [(ngModel)]="freelancer.address">
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">website : </div>
+                        <div class="col">
+                            <input name="website" class="form-control" type="text"  [(ngModel)]="freelancer.website">
+
+                        </div>
+                    </div>
+
+                    <button (click)="createFreelancer()"  [disabled]="freelancerForm.form.invalid" type="submit" class="btn btn-primary btn-round">Create</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
